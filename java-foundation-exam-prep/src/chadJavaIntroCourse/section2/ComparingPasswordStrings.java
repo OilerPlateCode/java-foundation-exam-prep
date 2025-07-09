@@ -16,7 +16,13 @@ public class ComparingPasswordStrings {
         System.out.println("password == correctPassword " + (password == correctPassword));
         System.out.println("password == otherCorrectPassword " + (password == otherCorrectPassword));
 
-        // TODO: learn compareTo():
+        String message = password.equals(otherCorrectPassword) ? "Correct Password" : "Wrong Password";
+        String otherMessage = password == correctPassword ? "they match memory address" : "they don't match memory address";
+        System.out.println(message);
+        System.out.println(otherMessage);
 
+
+        // TODO: learn compareTo():
+    scanner.close();
     }
 }

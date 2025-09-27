@@ -7,8 +7,15 @@ public class GreetingLamda {
 
         Greeting lambda = () -> System.out.println("Hello Lambda");
         lambda.greetings();
+
+        Farewell farewell = (f) -> System.out.println(f);
+        farewell.goodBye("cheerios");
     }
 
+}
+
+interface Farewell {
+    void goodBye(String n);
 }
 
 interface Greeting {

@@ -10,6 +10,9 @@ public class GreetingLamda {
 
         Farewell farewell = (f) -> System.out.println(f);
         farewell.goodBye("cheerios");
+
+        StringEndings exclaimationMark = (s) -> s + "!";
+        System.out.println(exclaimationMark.perform("Completes the punctuation"));
     }
 
 }
@@ -20,6 +23,12 @@ interface Farewell {
 
 interface Greeting {
     void greetings();
+}
+
+// Tells other Devs not to add more methods to this interface
+@FunctionalInterface
+interface StringEndings {
+    String perform(String s);
 }
 
  class GreetingImpl {

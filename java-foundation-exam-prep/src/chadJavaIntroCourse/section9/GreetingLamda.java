@@ -1,5 +1,7 @@
 package chadJavaIntroCourse.section9;
 
+import java.util.function.Predicate;
+
 public class GreetingLamda {
     public static void main(String[] args) {
         GreetingImpl greetingImpl = new GreetingImpl();
@@ -17,14 +19,22 @@ public class GreetingLamda {
         StringCompare compare = (s1, s2) -> {
             if (s1.length() > s2.length()) {
                 return s1;
-            } else {
-                return s2;
             }
+            return s2;
+
         };
 
         System.out.println(compare.getLongest("OilerplateCode", "Mbuzulwane Gindindza"));
-    }
 
+        Predicate<Integer> lessThan100 = i -> (i < 100);
+        boolean result = lessThan100.test(55);
+        System.out.println(result);
+        System.out.println("=====================Predicate===============");
+        Predicate<Integer> greaterThan100 = i -> i > 100;
+        Predicate<Integer> lessThan150 = (i) -> i < 150;
+        boolean otherResult = lessThan150.or(greaterThan100).test(105);
+        System.out.println(otherResult);
+    }
 }
 
 interface Farewell {

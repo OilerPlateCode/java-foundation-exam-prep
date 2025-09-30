@@ -13,6 +13,16 @@ public class GreetingLamda {
 
         StringEndings exclaimationMark = (s) -> s + "!";
         System.out.println(exclaimationMark.perform("Completes the punctuation"));
+
+        StringCompare compare = (s1, s2) -> {
+            if (s1.length() > s2.length()) {
+                return s1;
+            } else {
+                return s2;
+            }
+        };
+
+        System.out.println(compare.getLongest("OilerplateCode", "Mbuzulwane Gindindza"));
     }
 
 }
@@ -29,6 +39,11 @@ interface Greeting {
 @FunctionalInterface
 interface StringEndings {
     String perform(String s);
+}
+
+@FunctionalInterface
+interface StringCompare {
+    String getLongest(String a, String b);
 }
 
  class GreetingImpl {

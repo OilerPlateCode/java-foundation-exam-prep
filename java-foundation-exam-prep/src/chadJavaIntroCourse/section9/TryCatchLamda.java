@@ -3,7 +3,13 @@ package chadJavaIntroCourse.section9;
 public class TryCatchLamda {
     public static void main(String[] args) {
 Calculate divide = (a,b) -> {
-    return a/b;
+    try {
+        return a/b;
+    } catch (ArithmeticException e) {
+        e.printStackTrace();
+        return -1;
+    }
+
 };
 
 int solution = divide.perform(10, 0);

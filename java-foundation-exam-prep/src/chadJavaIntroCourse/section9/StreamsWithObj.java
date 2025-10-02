@@ -27,6 +27,19 @@ public class StreamsWithObj {
                 .filter(e -> e.getYearsOfService() < 5)
                 .count();
         System.out.println("Less than 5 is " + employeeYearsLessThan5);
+        System.out.println("=====Starts with S====");
+
+        List<Employee> startsWithS = new ArrayList<>();
+
+        for (Employee employee : employees) {
+            if (employee.getFirstName().startsWith("S")) {
+                startsWithS.add(employee);
+            }
+        }
+
+        for (Employee employee : startsWithS) {
+            System.out.println(employee.getFirstName());
+        }
     }
 }
 

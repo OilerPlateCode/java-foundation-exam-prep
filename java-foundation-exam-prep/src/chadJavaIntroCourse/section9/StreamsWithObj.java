@@ -2,6 +2,7 @@ package chadJavaIntroCourse.section9;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamsWithObj {
     public static void main(String[] args) {
@@ -40,6 +41,11 @@ public class StreamsWithObj {
         for (Employee employee : startsWithS) {
             System.out.println(employee.getFirstName());
         }
+
+        System.out.println("=====Ends with O====");
+        List<Employee> endsWithO = employees.stream().filter(e -> e.getFirstName().endsWith("o")).toList();
+        endsWithO.forEach(e -> System.out.println(e.getFirstName()));
+
     }
 }
 

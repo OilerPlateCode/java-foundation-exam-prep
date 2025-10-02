@@ -21,7 +21,12 @@ public class StreamsWithObj {
                 employeeYearsAbove4++;
             }
         }
-        System.out.println(employeeYearsAbove4);
+        System.out.println("More than 4 is "+employeeYearsAbove4);
+
+        long employeeYearsLessThan5 = employees.stream()
+                .filter(e -> e.getYearsOfService() < 5)
+                .count();
+        System.out.println("Less than 5 is " + employeeYearsLessThan5);
     }
 }
 

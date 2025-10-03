@@ -15,7 +15,10 @@ public class ExceptionHandlingWithNumbers {
             int notNumberInt = Integer.parseInt(notNumberString);
             System.out.println(notNumberInt);
         } catch (IllegalArgumentException e) {
-            throw new RuntimeException(e);
+            System.out.println("Should pass in a String that is inty");
+            System.out.println(e);
+            System.out.println(e.getMessage());
+//            throw new RuntimeException(e);
         }
     }
 }

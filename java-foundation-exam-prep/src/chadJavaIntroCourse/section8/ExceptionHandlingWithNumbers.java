@@ -21,4 +21,17 @@ public class ExceptionHandlingWithNumbers {
 //            throw new RuntimeException(e);
         }
     }
+
+    public void parseString(String numberString) {
+        try {
+            int numberInt = Integer.parseInt(numberString);
+        }
+        catch (NumberFormatException | NullPointerException e) {
+            System.out.println("Should pass in a String that is inty");
+        }
+
+        catch (Exception e) {
+            System.out.println("Something went wrong");
+        }
+    }
 }

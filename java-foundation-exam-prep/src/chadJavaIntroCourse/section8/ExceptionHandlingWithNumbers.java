@@ -38,6 +38,8 @@ public class ExceptionHandlingWithNumbers {
 
         catch (Exception e) {
             System.out.println("Eyyyyyy ==== Something went wrong"); // TODO add scenarios that hit this
+        } finally {
+            System.out.println("Finally block ran regardless");
         }
     }
 }

@@ -5,10 +5,12 @@ import java.io.*;
 public class LearnBufferedWriter {
 
     public static void main(String[] args) throws IOException {
-        String fileNameAndPath = "/Users/oilerplate/Projects/IdeaProjects/learning/java-foundation-exam-prep/java-foundation-exam-prep/src/chadJavaIntroCourse/section8/newFile.txt";
+        String fileNameAndPath = "/Users/oilerplatecode/Projects/IdeaProjects/learning/java-foundation-exam-prep/java-foundation-exam-prep/src/chadJavaIntroCourse/section8/newFile.txt";
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileNameAndPath))) {
-writer.write("Eita Fede");
+            writer.write("Eita Fede");
+            writer.newLine();
+            writer.write("Nig grand Mfethu");
         } catch (IOException e) {
             System.out.println(e);
         }

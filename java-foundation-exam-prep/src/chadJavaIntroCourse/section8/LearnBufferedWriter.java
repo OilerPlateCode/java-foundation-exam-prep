@@ -1,13 +1,18 @@
 package chadJavaIntroCourse.section8;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
-public class LearnTryWithResBufferedReader {
+public class LearnBufferedWriter {
+
     public static void main(String[] args) throws IOException {
-String fileNameAndPath = "/Users/oilerplate/Projects/IdeaProjects/learning/java-foundation-exam-prep/java-foundation-exam-prep/src/chadJavaIntroCourse/section8/file.txt";
+        String fileNameAndPath = "/Users/oilerplate/Projects/IdeaProjects/learning/java-foundation-exam-prep/java-foundation-exam-prep/src/chadJavaIntroCourse/section8/newFile.txt";
+
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileNameAndPath))) {
+writer.write("Eita Fede");
+        } catch (IOException e) {
+            System.out.println(e);
+        }
+
         try (BufferedReader bufferedReader = new BufferedReader (new FileReader(fileNameAndPath));) {
             String line;
             while ((line = bufferedReader.readLine()) != null) {

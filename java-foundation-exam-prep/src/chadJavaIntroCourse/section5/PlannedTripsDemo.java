@@ -20,5 +20,7 @@ public class PlannedTripsDemo {
         for (String trip : tripTypes) {
             System.out.println("I want to go " + trip);
         }
+
+        sc.close();
     }
 }

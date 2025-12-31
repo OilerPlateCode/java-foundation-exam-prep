@@ -12,7 +12,7 @@ public class PlannedTripsDemo {
         String tripType;
 
         for (int i = 0; i < numberOfTrips; i++) {
-            System.out.print("Enter trip type: ");
+            System.out.print("Enter trip type number " + (i+1) + ": ");
             tripType = sc.next();
             tripTypes[i] = tripType;
         }

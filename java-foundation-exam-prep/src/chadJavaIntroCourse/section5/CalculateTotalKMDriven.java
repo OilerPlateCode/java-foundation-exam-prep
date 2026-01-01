@@ -15,6 +15,7 @@ public class CalculateTotalKMDriven {
         }
 
         System.out.println("We drove a total of: " + calculateTotal(kmDriven));
+        scanner.close();
     }
 
     private static float calculateTotal(float[] numberOfTrips) {

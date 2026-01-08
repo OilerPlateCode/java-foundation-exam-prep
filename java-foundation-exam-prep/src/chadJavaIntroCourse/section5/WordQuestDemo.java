@@ -1,10 +1,16 @@
 package chadJavaIntroCourse.section5;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class WordQuestDemo {
     public static void main(String[] args) {
         String secretWord = getRandomWord();
+
+        int maxAttempts = 10;
+        char[] gameBoard = new char[secretWord.length()];
+
+        Arrays.fill(gameBoard, '_');
     }
 
     private static String getRandomWord() {

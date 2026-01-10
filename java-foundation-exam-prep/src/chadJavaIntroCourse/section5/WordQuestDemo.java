@@ -27,7 +27,33 @@ public class WordQuestDemo {
 
             String userInput = scanner.nextLine().toUpperCase();
             char guess = userInput.charAt(0);
+
+            boolean isGuessCorrect = false;
+
+            for (int i = 0; i < secretWord.length(); i++) {
+                    if (guess == secretWord.charAt(i)) {
+                        gameBoard[i] = guess;
+                        isGuessCorrect = true;
+                    }
+
+                    if (isGuessCorrect) {
+                        System.out.println("Good job! You found a match.");
+
+                        wordNotRevealed = containsUnderscore(gameBoard);
+                    }
+            }
+
+
         }
+    }
+
+    private static boolean containsUnderscore(char[] gameBoard) {
+        for (char temp: gameBoard) {
+            if (temp == '_') {
+                return true;
+            }
+        }
+        return false;
     }
 
     private static String getRandomWord() {

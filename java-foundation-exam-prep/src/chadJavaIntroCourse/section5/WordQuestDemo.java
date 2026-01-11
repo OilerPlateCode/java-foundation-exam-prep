@@ -40,11 +40,21 @@ public class WordQuestDemo {
                         System.out.println("Good job! You found a match.");
 
                         wordNotRevealed = containsUnderscore(gameBoard);
+                    } else {
+                        System.out.println("You entered an incorrect letter.");
+                        maxAttempts--;
                     }
+                System.out.println("Guesses left: " + maxAttempts);
+                System.out.println();
+
+                if(wordNotRevealed) {
+                    System.out.println("You have ran out of attempts. The secret word was: " + secretWord);
+                } else {
+                    System.out.println("You wont, you successfully guessed the word: " + secretWord);
+                }
             }
-
-
         }
+        scanner.close();
     }
 
     private static boolean containsUnderscore(char[] gameBoard) {

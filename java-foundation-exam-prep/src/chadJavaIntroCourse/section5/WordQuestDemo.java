@@ -15,7 +15,7 @@ public class WordQuestDemo {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the word quest!");
-        boolean wordNotRevealed = false;
+        boolean wordNotRevealed = true;
 
         // Main game loop runs while there are attempts left and while the word is not solved
         while (maxAttempts > 0 && wordNotRevealed) {

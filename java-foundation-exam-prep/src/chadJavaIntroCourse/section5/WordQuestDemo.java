@@ -50,7 +50,7 @@ public class WordQuestDemo {
                 if(wordNotRevealed) {
                     System.out.println("You have ran out of attempts. The secret word was: " + secretWord);
                 } else {
-                    System.out.println("You wont, you successfully guessed the word: " + secretWord);
+                    System.out.println("You won, you successfully guessed the word: " + secretWord);
                 }
             }
         }

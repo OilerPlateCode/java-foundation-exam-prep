@@ -10,8 +10,8 @@ public class WordQuestDemoV2 {
 
         int maxAttempts = 10;
         char[] gameBoard = new char[secretWord.length()];
-
-        Arrays.fill(gameBoard, '_');
+        final char EMPTY_PLACEHOLDER = '-';
+        Arrays.fill(gameBoard, EMPTY_PLACEHOLDER);
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the word quest!");
@@ -39,7 +39,7 @@ public class WordQuestDemoV2 {
                     if (isGuessCorrect) {
                         System.out.println("Good job! You found a match.");
 
-                        hasMissingLetters = containsUnderscore(gameBoard);
+                        hasMissingLetters = contains(gameBoard, EMPTY_PLACEHOLDER);
                     } else {
                         System.out.println("You entered an incorrect letter.");
                         maxAttempts--;
@@ -57,9 +57,9 @@ public class WordQuestDemoV2 {
         scanner.close();
     }
 
-    private static boolean containsUnderscore(char[] gameBoard) {
+    private static boolean contains(char[] gameBoard, char EMPTY_PLACEHOLDER) {
         for (char temp: gameBoard) {
-            if (temp == '_') {
+            if (temp == EMPTY_PLACEHOLDER) {
                 return true;
             }
         }

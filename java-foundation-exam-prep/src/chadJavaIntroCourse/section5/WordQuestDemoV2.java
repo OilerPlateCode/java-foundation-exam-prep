@@ -15,10 +15,10 @@ public class WordQuestDemoV2 {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Welcome to the word quest!");
-        boolean wordNotRevealed = true;
+        boolean hasMissingLetters = true;
 
         // Main game loop runs while there are attempts left and while the word is not solved
-        while (maxAttempts > 0 && wordNotRevealed) {
+        while (maxAttempts > 0 && hasMissingLetters) {
             System.out.println("Current word: ");
             System.out.println(gameBoard);
 
@@ -39,7 +39,7 @@ public class WordQuestDemoV2 {
                     if (isGuessCorrect) {
                         System.out.println("Good job! You found a match.");
 
-                        wordNotRevealed = containsUnderscore(gameBoard);
+                        hasMissingLetters = containsUnderscore(gameBoard);
                     } else {
                         System.out.println("You entered an incorrect letter.");
                         maxAttempts--;
@@ -47,7 +47,7 @@ public class WordQuestDemoV2 {
                 System.out.println("Guesses left: " + maxAttempts);
                 System.out.println();
 
-                if(wordNotRevealed) {
+                if(hasMissingLetters) {
                     System.out.println("You have ran out of attempts. The secret word was: " + secretWord);
                 } else {
                     System.out.println("You won, you successfully guessed the word: " + secretWord);

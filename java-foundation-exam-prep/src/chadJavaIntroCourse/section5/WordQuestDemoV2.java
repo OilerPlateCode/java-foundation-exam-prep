@@ -1,12 +1,18 @@
 package chadJavaIntroCourse.section5;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
 public class WordQuestDemoV2 {
     public static void main(String[] args) {
-        String secretWord = getRandomWord();
+
+        String fileName = "data/sample.txt";
+        String secretWord = getRandomWord(fileName);
 
         int maxAttempts = 10;
         char[] gameBoard = new char[secretWord.length()];
@@ -66,9 +72,9 @@ public class WordQuestDemoV2 {
         return false;
     }
 
-    private static String getRandomWord() {
-        String[] words = {"Nissan", "Isuzu", "Jeep"};
-
+    private static String getRandomWord(String fileName) throws IOException {
+//        String[] words = {"Nissan", "Isuzu", "Jeep"};
+        List<String> linesList = Files.readAllLines(Paths.get(fileName));
         Random rand = new Random();
         int index = rand.nextInt(words.length); // 0-2 our array has 3 items so its cool
 

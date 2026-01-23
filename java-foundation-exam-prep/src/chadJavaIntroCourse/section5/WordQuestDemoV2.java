@@ -9,7 +9,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class WordQuestDemoV2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         String fileName = "data/sample.txt";
         String secretWord = getRandomWord(fileName);
@@ -75,6 +75,7 @@ public class WordQuestDemoV2 {
     private static String getRandomWord(String fileName) throws IOException {
 //        String[] words = {"Nissan", "Isuzu", "Jeep"};
         List<String> linesList = Files.readAllLines(Paths.get(fileName));
+        String[] words = linesList.toArray(new String[0]);
         Random rand = new Random();
         int index = rand.nextInt(words.length); // 0-2 our array has 3 items so its cool
 

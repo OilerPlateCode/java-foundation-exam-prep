@@ -11,7 +11,7 @@ import java.util.Scanner;
 public class WordQuestDemoV2 {
     public static void main(String[] args) throws IOException {
 
-        String fileName = "data/sample.txt";
+        String fileName = "data/sample-words.txt";
         String secretWord = getRandomWord(fileName);
 
         System.out.println("TESTING: " + secretWord);

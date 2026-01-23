@@ -14,6 +14,8 @@ public class WordQuestDemoV2 {
         String fileName = "data/sample.txt";
         String secretWord = getRandomWord(fileName);
 
+        System.out.println("TESTING: " + secretWord);
+
         int maxAttempts = 10;
         char[] gameBoard = new char[secretWord.length()];
         final char EMPTY_PLACEHOLDER = '-';

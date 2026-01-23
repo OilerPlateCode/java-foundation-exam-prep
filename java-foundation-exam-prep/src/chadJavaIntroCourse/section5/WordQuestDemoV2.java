@@ -48,18 +48,19 @@ public class WordQuestDemoV2 {
                         System.out.println("Good job! You found a match.");
 
                         hasMissingLetters = contains(gameBoard, EMPTY_PLACEHOLDER);
+
                     } else {
                         System.out.println("You entered an incorrect letter.");
                         maxAttempts--;
+
                     }
                 System.out.println("Guesses left: " + maxAttempts);
                 System.out.println();
-
-                if(hasMissingLetters) {
-                    System.out.println("You have ran out of attempts. The secret word was: " + secretWord);
-                } else {
-                    System.out.println("You won, you successfully guessed the word: " + secretWord);
-                }
+            }
+            if(hasMissingLetters) {
+                System.out.println("You have ran out of attempts. The secret word was: " + secretWord);
+            } else {
+                System.out.println("You won, you successfully guessed the word: " + secretWord);
             }
         }
         scanner.close();

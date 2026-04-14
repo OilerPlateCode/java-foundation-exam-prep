@@ -14,11 +14,26 @@ public class JsonReader {
     }
 
     private static String extractString(String json, String key) {
-
+        String search = "\"" + key + "\":";
+        int start = json.indexOf(search) + search.length();
+        int firstQuote = json.indexOf("\"", start);
+        int secondQuote = json.indexOf("\"", firstQuote + 1);
+        return json.substring(firstQuote + 1, secondQuote);
     }
 
     private static String extractNumber(String json, String key) {
+        String search = "\"" + key + "\":";
+        int start = json.indexOf(search) + search.length();
 
+        while (Character.isWhitespace(json.charAt(start))) {
+            start++;
+        }
+        int end = start;
+        while (end < json.length() && Character.isDigit(json.charAt(end))) {
+            end++;
+        }
+
+        return json.substring(start, end);
     }
 
 }

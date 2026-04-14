@@ -4,6 +4,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 public class JsonReader {
+
     public static User readUserFromJson(String filePath) throws IOException {
         String json = Files.readString(Path.of(filePath));
 
@@ -28,6 +29,7 @@ public class JsonReader {
         while (Character.isWhitespace(json.charAt(start))) {
             start++;
         }
+
         int end = start;
         while (end < json.length() && Character.isDigit(json.charAt(end))) {
             end++;
@@ -35,5 +37,4 @@ public class JsonReader {
 
         return json.substring(start, end);
     }
-
 }

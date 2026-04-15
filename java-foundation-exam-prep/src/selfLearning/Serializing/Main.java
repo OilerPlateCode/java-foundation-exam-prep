@@ -5,7 +5,7 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException {
         String filePath = "/Users/oilerplatecode/Projects/IdeaProjects/learning/java-foundation-exam-prep/java-foundation-exam-prep/src/selfLearning/Serializing/";
-        User user = new User("Mphendvulo Ginidza", 31);
+        User user = new User("Mphendvulo Ginidza", 30);
         Jsonwritter.saveUserToJson(user,  "user.json");
 
         User userDetails = JsonReader.readUserFromJson("user.json");
